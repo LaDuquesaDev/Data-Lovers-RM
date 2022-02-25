@@ -1,9 +1,8 @@
-function filtrar() {
-    filterPersonajes => (filterPersonajes.length > 20)
-    resultadoFiltro.addEventListener("click", btnFilterPersonajes);
-}
-export const filterPersonajes = (data) => {
-    let resultadoFiltro = data.filter(filtrar)
+export const data = () => {
+    return 'data';
+};
 
-    console.log(resultadoFiltro)
-}
+export const filterPersonajes = () => {
+    const estado = filterPersonajes.filter(t => t.results.status = "Alive");
+    return estado;
+};

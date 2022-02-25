@@ -1,5 +1,6 @@
+import { filterPersonajes } from './data.js';
 import data from './data/rickandmorty/rickandmorty.js';
-// import {filter} from './data.js';
+
 
 let dataResults = data.results
 let contenedorPersonajes = document.getElementById("contenedorPersonajes");
@@ -8,7 +9,6 @@ function listarPersonajes() {
     let grupoPersonajes = "";
     dataResults.forEach(element => {
         let personaje = `
-        <div class="cardPpal">
             <div class="cards">
                 <section class="fotoPersonaje">
                     <img src="${element.image}"/>
@@ -19,8 +19,7 @@ function listarPersonajes() {
                     <h5>Última vez visto en: ${element.origin.name}</h5>
                     <h5>Lugar de origen: ${element.location.name}</h5>
                 </section>
-            </div>
-        </div>    
+            </div>   
         `
         grupoPersonajes = grupoPersonajes + personaje
     });
@@ -30,60 +29,27 @@ listarPersonajes(dataResults);
 
 
 //Elementos
-let characters = document.getElementById("btnPersonajes")
-document.getElementsById("pantallaPersonajes").style.display = "none";
+// let characters = document.getElementById("btnPersonajes")
+// document.getElementsByClassName("pantallaPersonajes").style.display = "none";
 
-let startHome = document.getElementById("btnHome")
-document.getElementById("home").style.display = "none";
+// let startHome = document.getElementById("btnHome")
+// document.getElementById("home").style.display = "none";
 
 
 //Funciones
-function btnPersonajes() {
-    document.getElementById("home").style.display = "none";
-    document.getElementsById("pantallaPersonajes").style.display = "block";
-}
-
-function btnHome() {
-    document.getElementsById("pantallaPersonajes").style.display = "none";
-    document.getElementById("home").style.display = "block";
-}
-
-//Eventos
-characters.addEventListener("click", btnPersonajes);
-
-startHome.addEventListener("click", btnHome);
-
-
-
-
-
-
-
-
-
-
-
-
-// let personajes = [];
-// fetch('./data/rickandmorty/rickandmorty.json')
-// .then(choice => choice.json())
-// .then(data => personajes =data.results)
-// .then(() => traerPersonje(personajes))
-// .catch(error => {
-//     throw(error);
-// })
-
-// function listaPersonajes(personajes){
-//     let btnPersonajes = document.getElementById("btnPersonajes")
-// //     btnPersonajes.onclick = listaPersonajes()  
-//    //const listaPersonajes = document.getElementById('portalPersonajes');
-
+// function btnPersonajes() {
+//     document.getElementById("home").style.display = "none";
+//     document.getElementsByClassName("pantallaPersonajes").style.display = "block";
 // }
 
+// function btnHome() {
+//     document.getElementsByClassName("pantallaPersonajes").style.display = "none";
+//     document.getElementById("home").style.display = "block";
+// }
 
+//Eventos
+// characters.addEventListener("click", btnPersonajes);
 
+// startHome.addEventListener("click", btnHome);
 
-
-//cómo recorrer un arreglo
-//mostrar uno a uno los elementos del arrreglo en consola
-//imprimir en la sección de personajes cada uno de mis elementos
+console.log(filterPersonajes, data);
